@@ -1,0 +1,40 @@
+/* Smooth Scrolling Native Reset */
+html.lenis, html.lenis body {
+    height: auto;
+    width: 100vw;
+    overflow-x: hidden;
+}
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+/* Hide Scrollbar for clean aesthetic */
+::-webkit-scrollbar { display: none; }
+* { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Typography Selection */
+::selection { background-color: #0A192F; color: #F4F0EB; }
+
+/* Specific UI Utilities */
+.text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1px #F4F0EB;
+}
+
+.perspective-container {
+    perspective: 1500px;
+}
+
+/* Media Hover FX */
+.gallery-item img, .gallery-item video {
+    transition: transform 1.2s cubic-bezier(0.19, 1, 0.22, 1), filter 1s ease;
+    will-change: transform;
+}
+.gallery-item:hover img, .gallery-item:hover video {
+    transform: scale(1.08);
+}
+
+@keyframes scroll {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
