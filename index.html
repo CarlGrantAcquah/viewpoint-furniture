@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Viewpoint Furniture | Crafting Spatial Luxury</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F4F0EB',
+                        navy: '#0A192F',
+                        gold: '#C5A059',
+                        charcoal: '#2C2E33',
+                    },
+                    fontFamily: {
+                        syne: ['Syne', 'sans-serif'],
+                        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-cream text-charcoal font-jakarta overflow-x-hidden">
+
+    <!-- Header Navigation -->
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 px-6 py-6 md:px-12 flex justify-between items-center text-cream transition-all duration-500 border-b border-transparent">
+        <div class="pointer-events-auto">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 overflow-hidden relative">
+                    <img src="assets/branding/main-logo.png" alt="Viewpoint Furniture" class="w-full h-full object-contain filter invert transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <span class="font-syne font-bold text-xl tracking-tight hidden md:block">Viewpoint</span>
+            </a>
+        </div>
+
+        <div class="pointer-events-auto flex items-center gap-6">
+            <div class="hidden md:flex font-jakarta text-sm uppercase tracking-widest gap-8">
+                <span class="opacity-80 hover:opacity-100 hover:text-gold transition-all cursor-pointer">Expertise</span>
+                <a href="gallery.html" class="opacity-80 hover:opacity-100 hover:text-gold transition-all cursor-pointer">Gallery</a>
+            </div>
+            <a href="tel:0241776811" class="magnetic-btn relative px-6 py-3 rounded-full bg-cream text-navy font-bold text-sm tracking-wide overflow-hidden group border border-transparent hover:border-gold">
+                <span class="relative z-10 transition-transform duration-500 block group-hover:-translate-y-full">024 177 6811</span>
+                <span class="absolute inset-0 z-10 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0 text-cream">Call Now</span>
+                <div class="absolute inset-0 bg-gold transform scale-y-0 origin-bottom transition-transform duration-500 ease-in-out group-hover:scale-y-100"></div>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. Immersive 3D Video Hero -->
+        <section class="hero-pin-wrapper relative w-full h-screen bg-charcoal overflow-hidden flex items-center justify-center perspective-container">
+            <div class="hero-3d-wrapper absolute inset-0 w-full h-full origin-center will-change-transform z-0">
+                <video id="hero-video" class="absolute inset-0 w-full h-full object-cover opacity-80" autoplay loop muted playsinline>
+                    <source src="assets/videos/hero-kitchen.mp4" type="video/mp4">
+                </video>
+                <div class="absolute inset-0 bg-gradient-to-b from-navy/60 via-navy/30 to-navy/90 z-10"></div>
+            </div>
+
+            <div class="relative z-20 w-full px-6 flex flex-col items-center justify-center pointer-events-none mt-12">
+                <h1 class="hero-title text-cream font-syne font-bold text-5xl md:text-7xl lg:text-[7vw] leading-[0.9] uppercase text-center flex flex-col items-center tracking-tight">
+                    <span class="hero-title-line block overflow-hidden"><span class="block transform translate-y-full transition-all duration-1000 ease-out">Crafting</span></span>
+                    <span class="hero-title-line block overflow-hidden"><span class="block transform translate-y-full transition-all duration-1000 delay-100 ease-out text-outline italic pr-4">Spatial</span></span>
+                    <span class="hero-title-line block overflow-hidden"><span class="block transform translate-y-full transition-all duration-1000 delay-200 ease-out">Luxury</span></span>
+                </h1>
+                <p class="hero-subtitle mt-8 text-cream/80 font-jakarta max-w-lg text-center text-sm md:text-base tracking-widest leading-relaxed opacity-0 translate-y-8 transition-all duration-1000 delay-500 uppercase">
+                    Bespoke Interior Architecture
+                </p>
+            </div>
+            
+            <div class="scroll-indicator absolute bottom-8 left-1/2 -translate-x-1/2 text-cream/70 flex flex-col items-center gap-3 z-30">
+                <span class="text-[10px] tracking-[0.3em] uppercase font-jakarta">Scroll to Explore</span>
+                <div class="w-[1px] h-16 bg-cream/20 overflow-hidden relative">
+                    <div class="w-full h-full bg-gold transform -translate-y-full animate-[scroll_2s_ease-in-out_infinite]"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Asymmetrical Side-Scrolling Pillars -->
+        <section class="timeline-wrapper relative bg-cream z-10 overflow-hidden">
+            <div class="absolute top-32 left-6 md:left-12 z-20 mix-blend-difference text-cream hidden md:block pointer-events-none">
+                <h2 class="font-syne font-bold text-2xl uppercase tracking-widest">Our Expertise</h2>
+            </div>
+
+            <div class="timeline-track flex flex-col md:flex-row w-full md:w-[400vw] h-auto md:h-screen">
+                
+                <!-- Pillar 1: Kitchen -->
+                <article class="timeline-item w-full md:w-[100vw] h-auto min-h-screen md:h-screen flex items-center justify-center relative px-6 md:px-24 pt-32 pb-16 md:py-0">
+                    <div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-center">
+                        <div class="md:col-span-5 z-10 relative horizontal-text-content">
+                            <span class="text-gold font-syne text-xl mb-4 block">01 / 06</span>
+                            <h2 class="font-syne text-5xl md:text-7xl font-bold text-navy leading-none mb-4 md:mb-6">Kitchen<br>Cabinets</h2>
+                            <p class="font-jakarta text-charcoal/80 text-lg leading-relaxed max-w-sm">Culinary spaces engineered for elegance and utility. We blend intelligent storage with breathtaking monolithic surface design.</p>
+                        </div>
+                        <div class="md:col-span-7 relative h-[45vh] md:h-[70vh] w-full overflow-hidden rounded-xl bg-charcoal/10 image-reveal-container">
+                            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+                                <source src="assets/content/pillars/1-kitchen.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Pillar 2: Worktops -->
+                <article class="timeline-item w-full md:w-[100vw] h-auto min-h-screen md:h-screen flex items-center justify-center relative px-6 md:px-24 py-16 md:py-0">
+                    <div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-center">
+                        <!-- Reordered explicitly for mobile: Text naturally stays on top now -->
+                        <div class="md:col-span-5 order-1 md:order-2 z-10 relative md:pl-12 horizontal-text-content">
+                            <span class="text-gold font-syne text-xl mb-4 block">02 / 06</span>
+                            <h2 class="font-syne text-5xl md:text-7xl font-bold text-navy leading-none mb-4 md:mb-6">Premium<br>Worktops</h2>
+                            <p class="font-jakarta text-charcoal/80 text-lg leading-relaxed max-w-sm">From rich monolithic granite to seamless quartz, our worktops serve as the durable, tactile anchors of your daily rituals.</p>
+                        </div>
+                        <div class="md:col-span-7 order-2 md:order-1 relative h-[45vh] md:h-[60vh] w-full overflow-hidden rounded-xl bg-charcoal/10 md:translate-y-12 image-reveal-container">
+                            <img src="assets/content/pillars/2-worktops.jpg" alt="Worktops" class="absolute inset-0 w-full h-full object-cover">
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Pillar 3 & 4: Wardrobes & Closets -->
+                <article class="timeline-item w-full md:w-[100vw] h-auto min-h-screen md:h-screen flex items-center justify-center relative px-6 md:px-24 py-16 md:py-0">
+                    <div class="w-full max-w-7xl h-full flex flex-col md:flex-row justify-center items-center gap-16 md:gap-12">
+                        <!-- Video -->
+                        <div class="w-full md:w-1/2 flex flex-col gap-6 md:gap-8 relative group">
+                            <!-- Flipped text/video order for mobile fluidity -->
+                            <div class="horizontal-text-content order-1 md:order-2">
+                                <span class="text-gold font-syne text-lg mb-2 block">03 / 06</span>
+                                <h3 class="font-syne text-3xl font-bold text-navy">Wardrobes</h3>
+                            </div>
+                            <div class="overflow-hidden h-[45vh] md:h-[50vh] rounded-xl bg-charcoal/10 image-reveal-container relative order-2 md:order-1">
+                                <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+                                    <source src="assets/content/pillars/3-wardrobes.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+
+                        <!-- Image -->
+                        <div class="w-full md:w-1/2 flex flex-col gap-6 md:gap-8 relative md:-translate-y-24 mt-4 md:mt-0">
+                            <div class="horizontal-text-content md:text-right">
+                                <span class="text-gold font-syne text-lg mb-2 block">04 / 06</span>
+                                <h3 class="font-syne text-3xl font-bold text-navy">Walk-in Closets</h3>
+                            </div>
+                            <div class="overflow-hidden h-[45vh] md:h-[70vh] rounded-xl bg-charcoal/10 image-reveal-container relative">
+                                <img src="assets/content/pillars/4-closets.png" alt="Walk-in Closets" class="absolute inset-0 w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Pillar 5 & 6: TV & Beds -->
+                <article class="timeline-item w-full md:w-[100vw] h-auto min-h-screen md:h-screen flex items-center justify-center relative px-6 md:px-24 py-24 pb-32 md:py-0 bg-charcoal text-cream">
+                    <div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center">
+                        <div class="relative z-10 flex flex-col gap-12 md:gap-16 horizontal-text-content">
+                            <div>
+                                <span class="text-gold font-syne text-xl mb-4 block">05 / 06</span>
+                                <h2 class="font-syne text-4xl md:text-6xl font-bold leading-tight mb-4">Television<br>Units</h2>
+                            </div>
+                            <div>
+                                <span class="text-gold font-syne text-xl mb-4 block">06 / 06</span>
+                                <h2 class="font-syne text-4xl md:text-6xl font-bold leading-tight mb-4">Bespoke<br>Beds</h2>
+                            </div>
+                        </div>
+                        <div class="relative h-[80vh] md:h-[80vh] w-full grid grid-rows-2 gap-6 md:gap-4 mt-8 md:mt-0">
+                            <div class="image-reveal-container overflow-hidden relative rounded-[30px] md:rounded-none md:rounded-bl-[60px] bg-navy/50">
+                                <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover">
+                                    <source src="assets/content/pillars/5-tv-units.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                            <div class="image-reveal-container overflow-hidden relative rounded-[30px] md:rounded-none md:rounded-tr-[60px] bg-navy/50">
+                                <img src="assets/content/pillars/6-beds.jpg" alt="Beds" class="absolute inset-0 w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- 3. Homepage Feature Gallery Snippet -->
+        <section class="relative w-full py-32 px-6 md:px-12 bg-cream overflow-hidden">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-24 border-b border-charcoal/10 pb-8 gap-8 showcase-header">
+                    <div>
+                        <h2 class="font-syne text-5xl md:text-7xl font-bold text-navy">Featured<br>Showcase</h2>
+                    </div>
+                    <a href="gallery.html" class="group flex items-center gap-4 text-navy font-jakarta font-bold tracking-widest uppercase text-sm">
+                        <span class="relative overflow-hidden block">
+                            <span class="block transition-transform duration-500 group-hover:-translate-y-full">View Full Gallery</span>
+                            <span class="absolute inset-0 block translate-y-full transition-transform duration-500 group-hover:translate-y-0 text-gold">View Full Gallery</span>
+                        </span>
+                        <div class="w-12 h-12 border border-navy/20 rounded-full flex items-center justify-center group-hover:border-gold group-hover:bg-gold group-hover:text-cream transition-all duration-500">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover:translate-x-1 transition-transform duration-500"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Javascript injects homepage items here -->
+                <div id="homepage-gallery-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 perspective-container"></div>
+            </div>
+        </section>
+
+        <!-- 4. Grand Contact Footer -->
+        <footer class="relative w-full py-32 px-6 md:px-12 bg-navy text-cream overflow-hidden">
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+            
+            <div class="max-w-7xl mx-auto flex flex-col items-center justify-center text-center relative z-10 footer-content">
+                <span class="font-jakarta text-gold tracking-[0.3em] text-sm mb-6 uppercase">Ready to Transform Your Viewpoint?</span>
+                <h2 class="font-syne text-5xl md:text-8xl lg:text-[10vw] font-bold leading-none mb-12 hover:text-outline transition-colors duration-500 cursor-default">
+                    LET'S BUILD
+                </h2>
+                
+                <div class="flex flex-col items-center gap-6 mb-24">
+                    <a href="tel:0241776811" class="magnetic-btn group relative flex items-center justify-center gap-6 pb-2 border-b border-cream/20 hover:border-gold transition-colors duration-500">
+                        <span class="font-syne text-3xl md:text-5xl lg:text-6xl text-cream group-hover:text-gold transition-colors duration-500">024 177 6811</span>
+                        <div class="w-12 h-12 rounded-full border border-cream/30 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all duration-500">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-cream group-hover:text-navy"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </a>
+                    
+                    <a href="https://wa.me/233241776811" target="_blank" class="magnetic-btn group relative flex items-center justify-center gap-6 pb-2 border-b border-cream/20 hover:border-[#25D366] transition-colors duration-500">
+                        <span class="font-syne text-xl md:text-3xl text-cream group-hover:text-[#25D366] transition-colors duration-500">Chat on WhatsApp</span>
+                        <div class="w-12 h-12 rounded-full border border-cream/30 flex items-center justify-center group-hover:bg-[#25D366] group-hover:border-[#25D366] transition-all duration-500">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cream group-hover:text-white transition-colors duration-500">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="w-full flex flex-col md:flex-row justify-between items-center text-sm font-jakarta text-cream/50 gap-8 mt-12 border-t border-cream/10 pt-8">
+                    <p>&copy; 2026 Viewpoint Furniture Enterprise.</p>
+                    <div class="flex gap-6">
+                        <a href="https://www.instagram.com/abdulhanannuhu/" target="_blank" class="hover:text-gold transition-colors">Instagram</a>
+                        <a href="https://www.tiktok.com/@viewpointfurniture_net" target="_blank" class="hover:text-gold transition-colors">TikTok</a>
+                        <a href="https://www.facebook.com/share/18vzEqHiWC/?mibextid=wwXIfr" target="_blank" class="hover:text-gold transition-colors">Facebook</a>
+                    </div>
+                    <a href="https://carlgrantacquah.github.io/" target="_blank" class="hover:text-cream transition-colors group flex items-center gap-2">
+                        <span>Designed by Carl Grant Acquah</span>
+                        <span class="inline-block transform group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

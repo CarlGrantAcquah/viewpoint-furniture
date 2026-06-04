@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Complete Gallery | Viewpoint Furniture</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { cream: '#F4F0EB', navy: '#0A192F', gold: '#C5A059', charcoal: '#2C2E33', },
+                    fontFamily: { syne: ['Syne', 'sans-serif'], jakarta: ['Plus Jakarta Sans', 'sans-serif'], }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-cream text-charcoal font-jakarta overflow-x-hidden">
+
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 px-6 py-6 md:px-12 flex justify-between items-center text-cream transition-all duration-500 border-b border-transparent bg-navy/90 backdrop-blur-md">
+        <div class="pointer-events-auto">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 overflow-hidden relative">
+                    <img src="assets/branding/main-logo.png" alt="Viewpoint Furniture" class="w-full h-full object-contain filter invert transition-transform duration-700 group-hover:scale-110">
+                </div>
+                <span class="font-syne font-bold text-xl tracking-tight hidden md:block">Viewpoint</span>
+            </a>
+        </div>
+        <div class="pointer-events-auto flex items-center gap-6">
+            <div class="hidden md:flex font-jakarta text-sm uppercase tracking-widest gap-8">
+                <a href="index.html" class="opacity-80 hover:opacity-100 hover:text-gold transition-all cursor-pointer">Home</a>
+            </div>
+            <a href="tel:0241776811" class="magnetic-btn relative px-6 py-3 rounded-full bg-cream text-navy font-bold text-sm tracking-wide overflow-hidden group border border-transparent hover:border-gold">
+                <span class="relative z-10 transition-transform duration-500 block group-hover:-translate-y-full">024 177 6811</span>
+                <span class="absolute inset-0 z-10 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0 text-cream">Call Now</span>
+                <div class="absolute inset-0 bg-gold transform scale-y-0 origin-bottom transition-transform duration-500 ease-in-out group-hover:scale-y-100"></div>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Shorter Hero for the Gallery Page -->
+        <section class="relative w-full pt-48 pb-20 px-6 md:px-12 bg-navy text-cream flex flex-col items-center justify-center text-center">
+            <h1 class="font-syne font-bold text-5xl md:text-7xl uppercase tracking-tight mb-6">Complete<br><span class="text-gold italic pr-4">Showcase</span></h1>
+            <p class="font-jakarta text-cream/70 max-w-lg text-sm md:text-base leading-relaxed tracking-wide">
+                An extensive archive of our interior architectural interventions. 
+            </p>
+        </section>
+
+        <!-- Massive Grid Container -->
+        <section class="relative w-full py-24 px-6 md:px-12 bg-cream overflow-hidden">
+            <div class="max-w-[1400px] mx-auto">
+                <div id="full-gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 perspective-container"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="relative w-full py-32 px-6 md:px-12 bg-navy text-cream overflow-hidden">
+            <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+            <div class="max-w-7xl mx-auto flex flex-col items-center justify-center text-center relative z-10">
+                <span class="font-jakarta text-gold tracking-[0.3em] text-sm mb-6 uppercase">Ready to Transform Your Viewpoint?</span>
+                <h2 class="font-syne text-5xl md:text-8xl lg:text-[10vw] font-bold leading-none mb-12 hover:text-outline transition-colors duration-500 cursor-default">LET'S BUILD</h2>
+                
+                <!-- NEW: Stacked Phone & WhatsApp Buttons -->
+                <div class="flex flex-col items-center gap-6 mb-24">
+                    <a href="tel:0241776811" class="magnetic-btn group relative flex items-center justify-center gap-6 pb-2 border-b border-cream/20 hover:border-gold transition-colors duration-500">
+                        <span class="font-syne text-3xl md:text-5xl lg:text-6xl text-cream group-hover:text-gold transition-colors duration-500">024 177 6811</span>
+                        <div class="w-12 h-12 rounded-full border border-cream/30 flex items-center justify-center group-hover:bg-gold group-hover:border-gold transition-all duration-500">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform -rotate-45 group-hover:rotate-0 transition-transform duration-500 text-cream group-hover:text-navy"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
+                    </a>
+                    
+                    <a href="https://wa.me/233241776811" target="_blank" class="magnetic-btn group relative flex items-center justify-center gap-6 pb-2 border-b border-cream/20 hover:border-[#25D366] transition-colors duration-500">
+                        <span class="font-syne text-xl md:text-3xl text-cream group-hover:text-[#25D366] transition-colors duration-500">Chat on WhatsApp</span>
+                        <div class="w-12 h-12 rounded-full border border-cream/30 flex items-center justify-center group-hover:bg-[#25D366] group-hover:border-[#25D366] transition-all duration-500">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-cream group-hover:text-white transition-colors duration-500">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="w-full flex flex-col md:flex-row justify-between items-center text-sm font-jakarta text-cream/50 gap-8 mt-12 border-t border-cream/10 pt-8">
+                    <p>&copy; 2026 Viewpoint Furniture Enterprise.</p>
+                    <div class="flex gap-6">
+                        <a href="https://www.instagram.com/abdulhanannuhu/" target="_blank" class="hover:text-gold transition-colors">Instagram</a>
+                        <a href="https://www.tiktok.com/@viewpointfurniture_net" target="_blank" class="hover:text-gold transition-colors">TikTok</a>
+                        <a href="https://www.facebook.com/share/18vzEqHiWC/?mibextid=wwXIfr" target="_blank" class="hover:text-gold transition-colors">Facebook</a>
+                    </div>
+                    <a href="https://carlgrantacquah.github.io/" target="_blank" class="hover:text-cream transition-colors group flex items-center gap-2">
+                        <span>Designed by Carl Grant Acquah</span>
+                        <span class="inline-block transform group-hover:translate-x-1 transition-transform">→</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
