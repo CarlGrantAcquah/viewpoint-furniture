@@ -34,7 +34,7 @@
 
     <!-- Header Navigation -->
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 px-6 py-6 md:px-12 flex justify-between items-center text-cream transition-all duration-500 border-b border-transparent">
-        <div class="pointer-events-auto">
+        <div class="pointer-events-auto relative z-50">
             <a href="index.html" class="flex items-center gap-3 group">
                 <div class="w-10 h-10 overflow-hidden relative">
                     <img src="assets/branding/main-logo.png" alt="Viewpoint Furniture" class="w-full h-full object-contain filter invert transition-transform duration-700 group-hover:scale-110">
@@ -43,18 +43,43 @@
             </a>
         </div>
 
-        <div class="pointer-events-auto flex items-center gap-6">
-            <div class="hidden md:flex font-jakarta text-sm uppercase tracking-widest gap-8">
-                <span class="opacity-80 hover:opacity-100 hover:text-gold transition-all cursor-pointer">Expertise</span>
-                <a href="gallery.html" class="opacity-80 hover:opacity-100 hover:text-gold transition-all cursor-pointer">Gallery</a>
-            </div>
-            <a href="tel:0241776811" class="magnetic-btn relative px-6 py-3 rounded-full bg-cream text-navy font-bold text-sm tracking-wide overflow-hidden group border border-transparent hover:border-gold">
+        <div class="pointer-events-auto flex items-center gap-6 relative z-50">
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex font-jakarta text-sm uppercase tracking-widest gap-8 mr-4">
+                <a href="index.html" class="opacity-80 hover:opacity-100 hover:text-gold transition-all">Home</a>
+                <a href="#expertise" class="opacity-80 hover:opacity-100 hover:text-gold transition-all">Expertise</a>
+                <a href="gallery.html" class="opacity-80 hover:opacity-100 hover:text-gold transition-all">Gallery</a>
+                <a href="#contact" class="opacity-80 hover:opacity-100 hover:text-gold transition-all">Contact</a>
+            </nav>
+            
+            <!-- CTA Button (Hidden on tiny phones to save space for logo and menu) -->
+            <a href="tel:0241776811" class="magnetic-btn hidden sm:flex relative px-6 py-3 rounded-full bg-cream text-navy font-bold text-sm tracking-wide overflow-hidden group border border-transparent hover:border-gold">
                 <span class="relative z-10 transition-transform duration-500 block group-hover:-translate-y-full">024 177 6811</span>
                 <span class="absolute inset-0 z-10 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0 text-cream">Call Now</span>
                 <div class="absolute inset-0 bg-gold transform scale-y-0 origin-bottom transition-transform duration-500 ease-in-out group-hover:scale-y-100"></div>
             </a>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none">
+                <span class="w-7 h-[2px] bg-cream transition-all duration-300 transform origin-center block"></span>
+                <span class="w-7 h-[2px] bg-cream transition-all duration-300 transform origin-center block mt-2"></span>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-navy/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center translate-x-full transition-transform duration-700 ease-in-out">
+        <nav class="flex flex-col items-center gap-10 font-syne text-4xl font-bold uppercase tracking-widest">
+            <a href="index.html" class="mobile-link text-cream hover:text-gold transition-colors">Home</a>
+            <a href="#expertise" class="mobile-link text-cream hover:text-gold transition-colors">Expertise</a>
+            <a href="gallery.html" class="mobile-link text-cream hover:text-gold transition-colors">Gallery</a>
+            <a href="#contact" class="mobile-link text-cream hover:text-gold transition-colors">Contact</a>
+        </nav>
+        <div class="mt-20 flex flex-col items-center gap-4">
+            <p class="font-jakarta text-gold text-xs tracking-[0.2em] uppercase">Get in touch</p>
+            <a href="tel:0241776811" class="font-syne text-3xl text-cream border-b border-cream/20 pb-2">024 177 6811</a>
+        </div>
+    </div>
 
     <main>
         <!-- 1. Immersive 3D Video Hero -->
@@ -85,8 +110,8 @@
             </div>
         </section>
 
-        <!-- 2. Asymmetrical Side-Scrolling Pillars -->
-        <section class="timeline-wrapper relative bg-cream z-10 overflow-hidden">
+        <!-- 2. Asymmetrical Side-Scrolling Pillars (ADDED id="expertise") -->
+        <section id="expertise" class="timeline-wrapper relative bg-cream z-10 overflow-hidden">
             <div class="absolute top-32 left-6 md:left-12 z-20 mix-blend-difference text-cream hidden md:block pointer-events-none">
                 <h2 class="font-syne font-bold text-2xl uppercase tracking-widest">Our Expertise</h2>
             </div>
@@ -112,7 +137,6 @@
                 <!-- Pillar 2: Worktops -->
                 <article class="timeline-item w-full md:w-[100vw] h-auto min-h-screen md:h-screen flex items-center justify-center relative px-6 md:px-24 py-16 md:py-0">
                     <div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8 items-center">
-                        <!-- Reordered explicitly for mobile: Text naturally stays on top now -->
                         <div class="md:col-span-5 order-1 md:order-2 z-10 relative md:pl-12 horizontal-text-content">
                             <span class="text-gold font-syne text-xl mb-4 block">02 / 06</span>
                             <h2 class="font-syne text-5xl md:text-7xl font-bold text-navy leading-none mb-4 md:mb-6">Premium<br>Worktops</h2>
@@ -127,9 +151,7 @@
                 <!-- Pillar 3 & 4: Wardrobes & Closets -->
                 <article class="timeline-item w-full md:w-[100vw] h-auto min-h-screen md:h-screen flex items-center justify-center relative px-6 md:px-24 py-16 md:py-0">
                     <div class="w-full max-w-7xl h-full flex flex-col md:flex-row justify-center items-center gap-16 md:gap-12">
-                        <!-- Video -->
                         <div class="w-full md:w-1/2 flex flex-col gap-6 md:gap-8 relative group">
-                            <!-- Flipped text/video order for mobile fluidity -->
                             <div class="horizontal-text-content order-1 md:order-2">
                                 <span class="text-gold font-syne text-lg mb-2 block">03 / 06</span>
                                 <h3 class="font-syne text-3xl font-bold text-navy">Wardrobes</h3>
@@ -141,7 +163,6 @@
                             </div>
                         </div>
 
-                        <!-- Image -->
                         <div class="w-full md:w-1/2 flex flex-col gap-6 md:gap-8 relative md:-translate-y-24 mt-4 md:mt-0">
                             <div class="horizontal-text-content md:text-right">
                                 <span class="text-gold font-syne text-lg mb-2 block">04 / 06</span>
@@ -201,13 +222,12 @@
                     </a>
                 </div>
 
-                <!-- Javascript injects homepage items here -->
                 <div id="homepage-gallery-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 perspective-container"></div>
             </div>
         </section>
 
-        <!-- 4. Grand Contact Footer -->
-        <footer class="relative w-full py-32 px-6 md:px-12 bg-navy text-cream overflow-hidden">
+        <!-- 4. Grand Contact Footer (ADDED id="contact") -->
+        <footer id="contact" class="relative w-full py-32 px-6 md:px-12 bg-navy text-cream overflow-hidden">
             <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
             
             <div class="max-w-7xl mx-auto flex flex-col items-center justify-center text-center relative z-10 footer-content">
