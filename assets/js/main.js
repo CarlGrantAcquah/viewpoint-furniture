@@ -1,11 +1,9 @@
-// Ensure history restoration doesn't break scroll positions
 if (history.scrollRestoration) { history.scrollRestoration = 'manual'; }
 gsap.registerPlugin(ScrollTrigger);
 
 // ----------------------------------------------------------------------
 // 1. DATA ARCHITECTURE
 // ----------------------------------------------------------------------
-
 // HOMEPAGE: Just 6 highlight items
 const homepageGalleryData = [
     { type: 'image', src: 'assets/content/gallery/photo-1.jpg', heightClass: 'h-[45vh]' },
@@ -57,24 +55,68 @@ const fullGalleryData = [
 ];
 
 // ----------------------------------------------------------------------
-// 2. SMOOTH SCROLL INIT (Lenis)
+// 2. SMOOTH SCROLL INIT
 // ----------------------------------------------------------------------
 const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    direction: 'vertical',
-    smooth: true,
+    duration: 1.2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), direction: 'vertical', smooth: true,
 });
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((time) => { lenis.raf(time * 1000); });
 gsap.ticker.lagSmoothing(0);
 
 // ----------------------------------------------------------------------
-// 3. CORE LOGIC (Runs on Both Pages)
+// 3. CORE LOGIC
 // ----------------------------------------------------------------------
 window.addEventListener('load', () => {
 
-    // --- REUSABLE BUILD GALLERY FUNCTION ---
+    // --- MOBILE MENU TOGGLE LOGIC ---
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const menuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+    let isMenuOpen = false;
+
+    if (menuBtn && menuOverlay) {
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            const lines = menuBtn.querySelectorAll('span');
+
+            if (isMenuOpen) {
+                // Slide in overlay
+                menuOverlay.classList.remove('translate-x-full');
+                menuOverlay.classList.add('translate-x-0');
+                // Animate lines to "X"
+                lines[0].style.transform = 'translateY(5px) rotate(45deg)';
+                lines[1].style.transform = 'translateY(-5px) rotate(-45deg)';
+                // Lock scrolling
+                document.body.style.overflow = 'hidden';
+            } else {
+                // Slide out overlay
+                menuOverlay.classList.remove('translate-x-0');
+                menuOverlay.classList.add('translate-x-full');
+                // Revert lines
+                lines[0].style.transform = 'none';
+                lines[1].style.transform = 'none';
+                // Unlock scrolling
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                menuOverlay.classList.remove('translate-x-0');
+                menuOverlay.classList.add('translate-x-full');
+                
+                const lines = menuBtn.querySelectorAll('span');
+                lines[0].style.transform = 'none';
+                lines[1].style.transform = 'none';
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    // --- GALLERY BUILD LOGIC ---
     function renderGallery(containerId, dataArray) {
         const container = document.getElementById(containerId);
         if (!container) return; 
@@ -105,7 +147,7 @@ window.addEventListener('load', () => {
     renderGallery('homepage-gallery-grid', homepageGalleryData);
     renderGallery('full-gallery-grid', fullGalleryData);
 
-    // --- Header Dynamic Glassmorphism Logic ---
+    // --- Header Scroll Logic ---
     const header = document.getElementById('main-header');
     if(header) {
         window.addEventListener('scroll', () => {
@@ -121,9 +163,8 @@ window.addEventListener('load', () => {
         });
     }
 
-    // --- Homepage ONLY Animations ---
+    // --- Homepage Animations ---
     if (document.getElementById('homepage-gallery-grid')) {
-        
         setTimeout(() => {
             const heroLines = document.querySelectorAll('.hero-title-line > span');
             heroLines.forEach(line => {
@@ -189,13 +230,10 @@ window.addEventListener('load', () => {
         });
     }
 
-    // --- Dynamic Gallery Fluid 3D Entry Animation (Runs on BOTH Pages) ---
+    // --- Dynamic Gallery Fluid 3D Entry Animation ---
     const galleryItems = gsap.utils.toArray('.parallax-layer');
     
-    // FIXED: The continuous overlapping yPercent tracker was removed entirely. 
-    // They now fall perfectly into their uniform columns with exact visual gaps.
-    galleryItems.forEach((item, i) => {
-        // Adds subtle variation to the start point so they feel "haphazard" before locking into place
+    galleryItems.forEach((item) => {
         const randomStartOffset = Math.random() * 50 + 80;
         
         gsap.from(item, {
