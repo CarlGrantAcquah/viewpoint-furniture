@@ -23,8 +23,9 @@
 </head>
 <body class="bg-cream text-charcoal font-jakarta overflow-x-hidden">
 
+    <!-- Header Navigation -->
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 px-6 py-6 md:px-12 flex justify-between items-center text-cream transition-all duration-500 border-b border-transparent bg-navy/90 backdrop-blur-md">
-        <div class="pointer-events-auto">
+        <div class="pointer-events-auto relative z-50">
             <a href="index.html" class="flex items-center gap-3 group">
                 <div class="w-10 h-10 overflow-hidden relative">
                     <img src="assets/branding/main-logo.png" alt="Viewpoint Furniture" class="w-full h-full object-contain filter invert transition-transform duration-700 group-hover:scale-110">
@@ -32,20 +33,44 @@
                 <span class="font-syne font-bold text-xl tracking-tight hidden md:block">Viewpoint</span>
             </a>
         </div>
-        <div class="pointer-events-auto flex items-center gap-6">
-            <div class="hidden md:flex font-jakarta text-sm uppercase tracking-widest gap-8">
-                <a href="index.html" class="opacity-80 hover:opacity-100 hover:text-gold transition-all cursor-pointer">Home</a>
-            </div>
-            <a href="tel:0241776811" class="magnetic-btn relative px-6 py-3 rounded-full bg-cream text-navy font-bold text-sm tracking-wide overflow-hidden group border border-transparent hover:border-gold">
+
+        <div class="pointer-events-auto flex items-center gap-6 relative z-50">
+            <nav class="hidden md:flex font-jakarta text-sm uppercase tracking-widest gap-8 mr-4">
+                <a href="index.html" class="opacity-80 hover:opacity-100 hover:text-gold transition-all">Home</a>
+                <a href="index.html#expertise" class="opacity-80 hover:opacity-100 hover:text-gold transition-all">Expertise</a>
+                <a href="gallery.html" class="text-gold">Gallery</a>
+                <a href="#contact" class="opacity-80 hover:opacity-100 hover:text-gold transition-all">Contact</a>
+            </nav>
+            
+            <a href="tel:0241776811" class="magnetic-btn hidden sm:flex relative px-6 py-3 rounded-full bg-cream text-navy font-bold text-sm tracking-wide overflow-hidden group border border-transparent hover:border-gold">
                 <span class="relative z-10 transition-transform duration-500 block group-hover:-translate-y-full">024 177 6811</span>
                 <span class="absolute inset-0 z-10 flex items-center justify-center translate-y-full transition-transform duration-500 group-hover:translate-y-0 text-cream">Call Now</span>
                 <div class="absolute inset-0 bg-gold transform scale-y-0 origin-bottom transition-transform duration-500 ease-in-out group-hover:scale-y-100"></div>
             </a>
+
+            <!-- Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none">
+                <span class="w-7 h-[2px] bg-cream transition-all duration-300 transform origin-center block"></span>
+                <span class="w-7 h-[2px] bg-cream transition-all duration-300 transform origin-center block mt-2"></span>
+            </button>
         </div>
     </header>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-navy/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center translate-x-full transition-transform duration-700 ease-in-out">
+        <nav class="flex flex-col items-center gap-10 font-syne text-4xl font-bold uppercase tracking-widest">
+            <a href="index.html" class="mobile-link text-cream hover:text-gold transition-colors">Home</a>
+            <a href="index.html#expertise" class="mobile-link text-cream hover:text-gold transition-colors">Expertise</a>
+            <a href="gallery.html" class="mobile-link text-gold">Gallery</a>
+            <a href="#contact" class="mobile-link text-cream hover:text-gold transition-colors">Contact</a>
+        </nav>
+        <div class="mt-20 flex flex-col items-center gap-4">
+            <p class="font-jakarta text-gold text-xs tracking-[0.2em] uppercase">Get in touch</p>
+            <a href="tel:0241776811" class="font-syne text-3xl text-cream border-b border-cream/20 pb-2">024 177 6811</a>
+        </div>
+    </div>
+
     <main>
-        <!-- Shorter Hero for the Gallery Page -->
         <section class="relative w-full pt-48 pb-20 px-6 md:px-12 bg-navy text-cream flex flex-col items-center justify-center text-center">
             <h1 class="font-syne font-bold text-5xl md:text-7xl uppercase tracking-tight mb-6">Complete<br><span class="text-gold italic pr-4">Showcase</span></h1>
             <p class="font-jakarta text-cream/70 max-w-lg text-sm md:text-base leading-relaxed tracking-wide">
@@ -53,21 +78,19 @@
             </p>
         </section>
 
-        <!-- Massive Grid Container -->
         <section class="relative w-full py-24 px-6 md:px-12 bg-cream overflow-hidden">
             <div class="max-w-[1400px] mx-auto">
                 <div id="full-gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-10 perspective-container"></div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="relative w-full py-32 px-6 md:px-12 bg-navy text-cream overflow-hidden">
+        <!-- Footer (ADDED id="contact") -->
+        <footer id="contact" class="relative w-full py-32 px-6 md:px-12 bg-navy text-cream overflow-hidden">
             <div class="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.65%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
             <div class="max-w-7xl mx-auto flex flex-col items-center justify-center text-center relative z-10">
                 <span class="font-jakarta text-gold tracking-[0.3em] text-sm mb-6 uppercase">Ready to Transform Your Viewpoint?</span>
                 <h2 class="font-syne text-5xl md:text-8xl lg:text-[10vw] font-bold leading-none mb-12 hover:text-outline transition-colors duration-500 cursor-default">LET'S BUILD</h2>
                 
-                <!-- NEW: Stacked Phone & WhatsApp Buttons -->
                 <div class="flex flex-col items-center gap-6 mb-24">
                     <a href="tel:0241776811" class="magnetic-btn group relative flex items-center justify-center gap-6 pb-2 border-b border-cream/20 hover:border-gold transition-colors duration-500">
                         <span class="font-syne text-3xl md:text-5xl lg:text-6xl text-cream group-hover:text-gold transition-colors duration-500">024 177 6811</span>
